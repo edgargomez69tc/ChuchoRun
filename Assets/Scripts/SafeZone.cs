@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SafeZone : MonoBehaviour
 {
-    private GameObject checkPoint;
+    //private GameObject checkPoint;
   
 
     // Start is called before the first frame update
     void Start()
     {
-        checkPoint = GameObject.FindGameObjectWithTag("checkPoint");
+        //checkPoint = GameObject.FindGameObjectWithTag("checkPoint");
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class SafeZone : MonoBehaviour
         
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+   /* private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -27,5 +27,5 @@ public class SafeZone : MonoBehaviour
             collision.transform.position = checkPoint.transform.position;
             
         }
-    }
+    }*/
 }

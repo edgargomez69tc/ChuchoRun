@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6671908247777288861}
   - component: {fileID: 5893079983225492078}
   - component: {fileID: 9144460668652954764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: huacal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

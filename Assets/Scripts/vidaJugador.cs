@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class vidaJugador : MonoBehaviour
 {
     public static int vida = 3;
+    public static int vidaMaxima = 3;
+
     public Image[] bolillos;
     private GameObject checkPoint;
     public Sprite fullBolillo;
@@ -20,6 +22,10 @@ public class vidaJugador : MonoBehaviour
      private bool esInvencible = false;        // Interruptor interno
      private SpriteRenderer spriteRend;        // Para cambiar el color del personaje
     */ // ---------------------------------------------------------
+    private void Awake()
+    {
+        vida = vidaMaxima;
+    }
 
     void Start()
     {

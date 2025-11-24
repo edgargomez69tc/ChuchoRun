@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 4609499748781141060}
   - component: {fileID: 88697400796758846}
   - component: {fileID: 1488168145442058199}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pajaro
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.13754445, y: 0.4645821}
@@ -780,6 +780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danoAlJugador: 10
+  monedaPrefab: {fileID: 8722878062074665864, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}
 --- !u!1 &125296147144283065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1533,7 @@ Transform:
   m_GameObject: {fileID: 1974875313854391460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.11, y: 0.14, z: 0}
+  m_LocalPosition: {x: -2.32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1552,7 +1554,7 @@ GameObject:
   - component: {fileID: 1092901464618737684}
   - component: {fileID: 8558815535223468050}
   - component: {fileID: 6659259875829017921}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -1582,7 +1584,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2184974225000227964}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d376e061ac13ade4c8989a150eb24f98, type: 3}
   m_Name: 
@@ -1645,6 +1647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danoAlJugador: 10
+  monedaPrefab: {fileID: 8722878062074665864, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}
 --- !u!114 &8558815535223468050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,7 +1705,7 @@ GameObject:
   - component: {fileID: 7157373712158387672}
   - component: {fileID: 7608101646474022329}
   - component: {fileID: 1655708088862337814}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -1731,7 +1735,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2230013831496450365}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d376e061ac13ade4c8989a150eb24f98, type: 3}
   m_Name: 
@@ -1794,6 +1798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danoAlJugador: 10
+  monedaPrefab: {fileID: 8722878062074665864, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}
 --- !u!114 &7608101646474022329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,7 +2003,7 @@ GameObject:
   - component: {fileID: 6607031928438713533}
   - component: {fileID: 5065575107035088813}
   - component: {fileID: 8767210217344814513}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pajaro
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -2076,7 +2082,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.13754445, y: 0.4645821}
@@ -2117,6 +2123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danoAlJugador: 10
+  monedaPrefab: {fileID: 8722878062074665864, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}
 --- !u!1 &3034863863774726936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,7 +3985,7 @@ Transform:
   m_GameObject: {fileID: 8188719503365162764}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.69, y: 0.43, z: 0}
+  m_LocalPosition: {x: 15.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4419,7 +4427,7 @@ Transform:
   m_GameObject: {fileID: 8779302954416873658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92, y: 4.14, z: 0}
+  m_LocalPosition: {x: 1.92, y: 1.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4483,7 +4491,7 @@ Transform:
   m_GameObject: {fileID: 9097265742120787571}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.42, y: 4.51, z: 0}
+  m_LocalPosition: {x: 22.42, y: 0.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class ColisionJugador : MonoBehaviour
 {
@@ -9,37 +10,30 @@ public class ColisionJugador : MonoBehaviour
     {
         if (collision.transform.tag == "Enemigo")
         {
-            PlayerManager.isGameOver = true;
-            gameObject.SetActive(false);
+            vidaJugador.vida--;
+            vidaJugador.vida = Mathf.Max(vidaJugador.vida, 0);
+            AudioManager.instance.Play("Impacto");
+            if (vidaJugador.vida <= 0)
+            {
+                PlayerManager.isGameOver = true;
+                AudioManager.instance.Play("Muerte");
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                StartCoroutine(RecibirDaño());
+            }
+           
+            
         }
-        /*vidaJugador.vida--;
-         if(vidaJugador.vida <= 0)
-         {
-             //vidaJugador.checkPoint = GameObject.FindGameObjectWithTag("checkPoint");
-         }
-         else
-         {
-             StartCoroutine(RecibirDaño());
-         }
-     }
-
-     IEnumerator RecibirDaño()
-     {
-         Physics2D.IgnoreLayerCollision(6, 8);
-         yield return new WaitForSeconds(3);
-         Physics2D.IgnoreLayerCollision(6,8, false);
-     }
-        */
-        // Start is called before the first frame update
-        void Start()
+        IEnumerator RecibirDaño()
         {
-
+            Physics2D.IgnoreLayerCollision(6, 8);
+            GetComponent<Animator>().SetLayerWeight(1, 1);
+            yield return new WaitForSeconds(3);
+            GetComponent<Animator>().SetLayerWeight(1, 0);
+            Physics2D.IgnoreLayerCollision(6, 8, false);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        
     }
 }

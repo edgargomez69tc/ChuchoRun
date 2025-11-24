@@ -28,18 +28,19 @@ public class Pistola : MonoBehaviour
             contadorTiempo += Time.deltaTime;
         }
 
-        if (Input.GetButton("Fire1") && (contadorTiempo >= tiempoEntreTiro) && contadorBalas > 0)
+        /*if (Input.GetButton("Fire1") && (contadorTiempo >= tiempoEntreTiro) && contadorBalas > 0)
         {
             GameObject nuevaBala = Instantiate(bala, this.transform.position, Quaternion.identity);
 
             // Le pasamos la dirección actual del jugador
-            nuevaBala.GetComponent<Bala>().direccion = jugador.direccion;
+            //nuevaBala.GetComponent<Bala>().direccion = jugador.direccion;
 
             contadorTiempo = 0;
             contadorBalas--;
             mostradorBalas.text = contadorBalas + "/12";
 
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.R))
         {

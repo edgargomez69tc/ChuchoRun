@@ -15,7 +15,7 @@ public class ScriptMoneda : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             contarMonedas += valor; // sumar valor
-            Debug.Log("Total monedas: " + contarMonedas);
+            AudioManager.instance.Play("PanMorido");
             CoinManager.instance.AgregarMoneda(valor);
 
             Destroy(this.gameObject);

@@ -15,7 +15,7 @@ public class ZonaRalentizadora : MonoBehaviour
 
     private bool yaActivado = false; // se aplica solo una vez por objeto
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (yaActivado) return; // ya se usó en este objeto
 
@@ -28,12 +28,13 @@ public class ZonaRalentizadora : MonoBehaviour
                 StartCoroutine(AplicarRalentizacionTemporal(jugador));
             }
         }
-    }
+    }*/
 
-    private IEnumerator AplicarRalentizacionTemporal(MoverJugador jugador)
+   /* private IEnumerator AplicarRalentizacionTemporal(MoverJugador jugador)
     {
         jugador.ModificarVelocidad(factorRalentizacion);
         yield return new WaitForSeconds(duracion);
         jugador.ModificarVelocidad(1f); // restaurar velocidad normal
     }
+   */
 }

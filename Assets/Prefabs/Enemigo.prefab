@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7681682794598072038}
   - component: {fileID: 7339971926150241152}
   - component: {fileID: 1092901464618737684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemigo
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -106,7 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedaPrefab: {fileID: 9099501484775571271, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}
 --- !u!1 &2805650840441146513
 GameObject:
   m_ObjectHideFlags: 0

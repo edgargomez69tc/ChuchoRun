@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4609499748781141060}
   - component: {fileID: 88697400796758846}
   - component: {fileID: 1488168145442058199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pajaro
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -133,8 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danoAlJugador: 10
-  monedaPrefab: {fileID: 8722878062074665864, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}
 --- !u!1 &8263088261363973030
 GameObject:
   m_ObjectHideFlags: 0

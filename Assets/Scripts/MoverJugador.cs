@@ -4,78 +4,86 @@ using UnityEngine;
 
 public class MoverJugador : MonoBehaviour
 {
-    public float velocidad = 1;
-    private float x;
-    private Rigidbody2D rb;
-    public float velocidadBase;
-    public float fuerzaSalto = 1;
-    private bool quiereSaltar = false;
-    public LayerMask capaSuelo;
-    public Transform detectorSuelos;
-    private float radioDetectorSuelos = 0.1f;
-    private bool tocandoSuelo = false;
-    public int direccion = 1; // 1 derecha, -1 izquierda
+    PlayerControls controls;
+    float direccion = 0f;
 
+    public Rigidbody2D PlayerRB;
+    public Animator animator;
+    public LayerMask sueloLayer;
 
-    // Start is called before the first frame update
-    void Start()
+    public float velocidadMovimiento = 450f;
+    public float fuerzaSalto = 8f;
+
+    public bool facingRight = true;
+    bool estaPisando;
+
+    public Transform DetectorSuelo;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        velocidadBase = velocidad; // inicializamos la base
+        controls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+
+        controls.Tierra.Moverse.performed += OnMove;
+        controls.Tierra.Moverse.canceled += OnMove; // Para dejar de moverse
+
+        controls.Tierra.Saltar.performed += OnJump;
+    }
+
+    private void OnDisable()
+    {
+        controls.Tierra.Moverse.performed -= OnMove;
+        controls.Tierra.Moverse.canceled -= OnMove;
+
+        controls.Tierra.Saltar.performed -= OnJump;
+
+        controls.Disable();
+    }
+
+    private void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        direccion = ctx.ReadValue<float>();
+    }
+
+    private void OnJump(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+    {
+        if (estaPisando)
+        {
+            PlayerRB.velocity = new Vector2(PlayerRB.velocity.x, fuerzaSalto);
+            AudioManager.instance.Play("Salto");
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        x = Input.GetAxisRaw("Horizontal");
+        estaPisando = Physics2D.OverlapCircle(DetectorSuelo.position, 0.1f, sueloLayer);
+        animator.SetBool("estaPisando", estaPisando);
 
 
-        //salto
-        quiereSaltar = Input.GetButton("Jump");
+        PlayerRB.velocity = new Vector2(direccion * velocidadMovimiento * Time.fixedDeltaTime, PlayerRB.velocity.y);
+        animator.SetFloat("velocidad", Mathf.Abs(direccion));
 
-        //Debug.Log("aqui Update");
-
-        //detectar Suelo
-        tocandoSuelo = Physics2D.OverlapCircle(detectorSuelos.position,
-            radioDetectorSuelos, capaSuelo);
-
-        if (x > 0)
+        if (facingRight && direccion < 0)
         {
-            direccion = 1; // mirando a la derecha
-            transform.localScale = new Vector3(1, 1, 1); // escala normal
+            Flip();
         }
-        else if (x < 0)
+        else if (!facingRight && direccion > 0)
         {
-            direccion = -1; // mirando a la izquierda
-            transform.localScale = new Vector3(-1, 1, 1); // invertimos en X
-        }
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Box")
-        {
-            FindObjectOfType<GroundSpawner>().SpawnTile();
-        }
-    }
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(x * velocidad, rb.velocity.y);
-
-
-        //salto
-        if (quiereSaltar && tocandoSuelo)
-        {
-            rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+            Flip();
         }
     }
 
-    public void ModificarVelocidad(float multiplicador)
+    void Flip()
     {
-        velocidad = velocidadBase * multiplicador;
+
+        facingRight = !facingRight;
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
-
-
-
 }
+
+  

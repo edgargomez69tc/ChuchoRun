@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 5691031875299481930}
   - component: {fileID: 5412404194712767774}
   - component: {fileID: 4902816585821384887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemie
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -255,4 +255,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedaPrefab: {fileID: 8722878062074665864, guid: ee31d0d681c78664e9b22affafcbaec7, type: 3}

@@ -7,7 +7,7 @@ using TMPro;
 public class timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerText;
-    private float timerElapsed;
+    public float timerElapsed { get; private set; }  // <-- para leerlo desde otros scripts
     private int minute, seco, cents;
 
     void Start()
@@ -24,5 +24,9 @@ public class timer : MonoBehaviour
         cents = (int)((timerElapsed - (int)timerElapsed) * 100f);
 
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minute, seco, cents);
+    }
+    public void SaveTimeAsScore()
+    {
+        HighScoreManager.SaveHighScore(timerElapsed);
     }
 }

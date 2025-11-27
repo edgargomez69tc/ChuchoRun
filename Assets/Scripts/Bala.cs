@@ -10,11 +10,11 @@ public class Bala : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            vidaEnemigo vidaEnemigo = collision.GetComponentInParent<vidaEnemigo>();
+            VidaBase vidaActual = collision.GetComponentInParent<VidaBase>();
 
-            if (vidaEnemigo != null)
+            if (vidaActual != null)
             {
-                vidaEnemigo.RecibirDaño(daño);
+                vidaActual.RecibirDaño(daño);
             }
             
             Destroy(this.gameObject);

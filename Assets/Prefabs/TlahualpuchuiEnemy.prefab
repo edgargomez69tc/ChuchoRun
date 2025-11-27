@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8763727150381527762}
   - component: {fileID: 6698762596272615170}
-  - component: {fileID: 8684487164185635760}
+  - component: {fileID: 587190842814287652}
   m_Layer: 8
   m_Name: TlahualpuchuiEnemy
   m_TagString: Enemigo
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &8684487164185635760
+--- !u!114 &587190842814287652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5648942585228955300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47de666051cdb044f929246de5033932, type: 3}
+  m_Script: {fileID: 11500000, guid: d68723ec9d8308b4197bf450d0155080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 1
